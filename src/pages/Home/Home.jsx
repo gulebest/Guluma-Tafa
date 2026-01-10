@@ -46,21 +46,37 @@ function Home() {
             mobile applications that make life easier and more beautiful.
           </p>
           <div className="home-sci">
-            <a href="#">
-              <i className="bx bxl-facebook"></i>
-            </a>
             <a
-              href="https://www.instagram.com/gule.oro.best"
+              href="https://github.com/gulebest"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub profile"
             >
-              <i className="bx bxl-instagram"></i>
+              <i className="bx bxl-github"></i>
             </a>
-            <a href="#">
-              <i className="bx bxl-whatsapp"></i>
+            <a
+              href="https://www.linkedin.com/in/guluma-best-1b2820329"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
+            >
+              <i className="bx bxl-linkedin"></i>
             </a>
-            <a href="#">
-              <i className="bx bxl-tiktok"></i>
+            <a
+              href="https://www.upwork.com/freelancers/~01b4c1c0422cb412d7"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Upwork profile"
+            >
+              <i className="bx bxl-upwork"></i>
+            </a>
+            <a
+              href="mailto:gulumabest694@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Email gulumabest694@gmail.com"
+            >
+              <i className="bx bxs-envelope"></i>
             </a>
           </div>
           <a href="#contact" className="hero-btn">
