@@ -34,7 +34,7 @@ export default function Header() {
           Services
         </NavLink>
         <NavLink to="/portfolio" onClick={closeMenu}>
-          Portfolio
+          Projects
         </NavLink>
         <NavLink to="/contact" onClick={closeMenu}>
           Contact

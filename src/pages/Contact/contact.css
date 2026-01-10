@@ -42,6 +42,50 @@
     margin-bottom: 1rem;
 }
 
+.contact-email {
+    color: #58a6ff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.contact-email:hover {
+    text-decoration: underline;
+}
+
+.contact-meta {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.contact-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: #d5e1ff;
+    font-size: 0.96rem;
+}
+
+.contact-row i {
+    color: #58a6ff;
+    font-size: 1.2rem;
+    width: 1.2rem;
+    text-align: center;
+}
+
+.contact-row a {
+    color: #58a6ff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.contact-row a:hover {
+    text-decoration: underline;
+}
+
 .contact-form {
     flex: 1.5;
     min-width: 300px;

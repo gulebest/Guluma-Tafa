@@ -49,8 +49,61 @@ function Contact() {
       <div className="contact-container">
         <div className="contact-info">
           <h3>Get in Touch</h3>
-          <p><strong>Email:</strong> gulumabest694@gmail.com</p>
+          <p>
+            <strong>Email:</strong>{" "}
+            <a
+              href="mailto:gulumabest694@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-email"
+              aria-label="Email gulumabest694@gmail.com"
+            >
+              gulumabest694@gmail.com
+            </a>
+          </p>
           <p><strong>Phone:</strong> +251920072951</p>
+          {/* Additional direct links keep content discoverable without changing form logic */}
+          <div className="contact-meta">
+            
+            <div className="contact-row">
+              <i className="bx bxl-github"></i>
+              <a
+                href="https://github.com/gulebest"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub profile"
+              >
+                GitHub
+              </a>
+            </div>
+            <div className="contact-row">
+              <i className="bx bxl-linkedin"></i>
+              <a
+                href="https://www.linkedin.com/in/guluma-best-1b2820329"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn profile"
+              >
+                LinkedIn
+              </a>
+            </div>
+            <div className="contact-row">
+              <i className="bx bxl-upwork"></i>
+              <a
+                href="https://www.upwork.com/freelancers/~01b4c1c0422cb412d7"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Upwork profile"
+              >
+                Upwork
+              </a>
+            </div>
+            <div className="contact-row" aria-label="Location">
+              <i className="bx bx-map"></i>
+              <span className="contact-label">Location:</span>
+              <span className="contact-value">Addis Ababa, Ethiopia</span>
+            </div>
+          </div>
         </div>
 
         <form ref={form} onSubmit={sendEmail} className="contact-form">

@@ -2,9 +2,10 @@ import React, { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import About from "../About/About";
 import Services from "../Services/Services";
-import Portfolio from "../Portfolio/Portfolio";
+import Projects from "../Portfolio/Portfolio";
 import Skills from "../../Components/Skills/Skills";
 import Contact from "../Contact/Contact";
+import HeroCanvas from "../../Components/Three/HeroCanvas";
 import "./home.css";
 
 function Home() {
@@ -29,6 +30,11 @@ function Home() {
     <div className="home">
       {/* Hero Section */}
       <section className="hero">
+        {/* 3D background layer (pointer-events disabled in CSS) */}
+        <div className="hero-bg" aria-hidden="true">
+          <HeroCanvas />
+        </div>
+
         <div className="hero-text">
           <h3>Hello, It's Me</h3>
           <h1>Gule Best</h1>
@@ -62,7 +68,7 @@ function Home() {
           </a>
         </div>
 
-       <div className="hero-content"></div>
+         <div className="hero-content"></div>
       </section>
       <div className="home_components">
       {/* About Section */}
@@ -76,8 +82,8 @@ function Home() {
       </section>
 
       {/* Portfolio Section */}
-      <section id="portfolio">
-        <Portfolio />
+      <section id="projects">
+        <Projects />
       </section>
 
       {/* Skills Section */}

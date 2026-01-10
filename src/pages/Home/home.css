@@ -27,18 +27,34 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    gap: 4rem;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 3.5rem;
+    flex-wrap: nowrap; /* desktop: keep side-by-side */
     text-align: left;
     padding: 4rem 10%;
     padding-top: 120px;
     position: relative;
+    /* Keep content visible so the portrait float isn't clipped while canvas stays behind. */
+    overflow: visible;
+    isolation: isolate;
     background: linear-gradient(to right, #0d1117, #161b22);
 }
 
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
 
-/* ============ HERO IMAGE ============ */
+.hero-bg .hero-canvas,
+.hero-bg canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
 
 .hero-content {
     width: 320px;
@@ -51,6 +67,19 @@
     box-shadow: 0 0 30px #58a6ff;
     flex-shrink: 0;
     animation: float 4s ease-in-out infinite;
+    position: relative;
+    z-index: 1; /* above canvas, below text in stacking */
+}
+
+.hero-text {
+    flex: 1 1 420px;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+    z-index: 2; /* keep text above image/background without overlapping layout */
 }
 
 .home_components {
@@ -96,13 +125,6 @@
 
 /* ============ TEXT CONTENT ============ */
 
-.hero-text {
-    max-width: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 .hero-text h3 {
     font-size: 1.4rem;
     color: #58a6ff;
@@ -127,7 +149,7 @@
 }
 
 .hero-text p {
-    color: #ccc;
+    color: #d5e1ff; /* slightly brighter for better contrast and polish against the dark hero */
     font-size: 1.1rem;
     line-height: 1.7;
     margin-bottom: 2rem;
@@ -172,22 +194,26 @@
 }
 
 .home-sci a {
-    width: 45px;
-    height: 45px;
-    border: 2px solid #58a6ff;
-    border-radius: 50%;
-    color: #58a6ff;
+    width: 46px;
+    height: 46px;
+    border: 1px solid rgba(88, 166, 255, 0.6);
+    background: linear-gradient(145deg, rgba(13, 17, 23, 0.95), rgba(22, 27, 34, 0.92));
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    border-radius: 12px;
     font-size: 1.5rem;
-    transition: 0.3s ease;
+    color: #dfe8ff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(88, 166, 255, 0.15) inset;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .home-sci a:hover {
-    background: #58a6ff;
+    background: linear-gradient(145deg, #58a6ff, #3f8bff);
+    border-color: #58a6ff;
     color: #081b29;
-    transform: translateY(-5px);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(31, 111, 235, 0.35), 0 0 0 1px rgba(88, 166, 255, 0.5) inset;
 }
 
 
@@ -209,17 +235,15 @@
 
 @media (max-width: 992px) {
     .hero {
-        flex-direction: column;
-        text-align: center;
-        gap: 2rem;
-        padding: 2rem;
-    }
-    .hero-content {
-        width: 260px;
-        height: 260px;
+        padding: 3rem 8%;
+        gap: 3rem;
+        flex-wrap: wrap; /* allow wrap when space tight */
     }
     .hero-text {
-        align-items: center;
+        flex: 1 1 100%;
+    }
+    .hero-content {
+        margin-inline: auto;
     }
     .hero-text h1 {
         font-size: 2.3rem;
@@ -232,10 +256,28 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        flex-wrap: wrap;
+        text-align: center;
+        gap: 2rem;
+        padding: 2.2rem 6%;
+    }
+    .hero-text {
+        order: 1;
+        align-items: center;
+    }
     .hero-content {
-        width: 200px;
-        height: 200px;
+        order: 2; /* image below text on small screens */
+        width: clamp(240px, 60vw, 320px);
+        height: clamp(240px, 60vw, 320px);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 2rem 6%;
     }
     .hero-text h1 {
         font-size: 1.8rem;

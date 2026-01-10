@@ -7,6 +7,13 @@ body {
     padding: 0;
 }
 
+/* Shared Three.js loader text (used by drei <Html /> fallbacks). */
+.canvas-loader {
+    color: #9db7e3;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+}
+
 section {
     padding: 100px 0;
     min-height: 100vh;

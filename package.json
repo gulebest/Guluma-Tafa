@@ -11,12 +11,15 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
     "aos": "^2.3.4",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^12.23.24",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.5",
+    "three": "^0.182.0",
     "typed.js": "^2.1.0"
   },
   "devDependencies": {
