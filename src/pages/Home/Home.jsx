@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import About from "../About/About";
 import Services from "../Services/Services";
-import Projects from "../Portfolio/Portfolio";
+import Portfolio from "../Portfolio/Portfolio";
 import Skills from "../../Components/Skills/Skills";
 import Contact from "../Contact/Contact";
 import HeroCanvas from "../../Components/Three/HeroCanvas";
@@ -98,8 +98,8 @@ function Home() {
       </section>
 
       {/* Portfolio Section */}
-      <section id="projects">
-        <Projects />
+      <section id="portfolio">
+        <Portfolio />
       </section>
 
       {/* Skills Section */}
